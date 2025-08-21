@@ -1,0 +1,4 @@
+delete from cars
+where model_id not in (select min(model_id)
+					  from cars
+					  group by model_name, brand);
